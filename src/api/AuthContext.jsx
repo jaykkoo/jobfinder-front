@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
   //Function to refresh the access token
   const refreshAccessToken = async () => {
     try {
-      const response = await axiosInstance.post("/accounts/token/refreshy/");
+      const response = await axiosInstance.post("/accounts/token/refresh/");
       console.log(response, "response");
       setAccessToken(response.data.access_token);
       setIsProfileProfessional(response.data.is_profile_professional);
