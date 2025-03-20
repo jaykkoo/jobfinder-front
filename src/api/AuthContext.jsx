@@ -15,6 +15,8 @@ export const AuthProvider = ({ children }) => {
   //Function to refresh the access token
   const refreshAccessToken = async () => {
     try {
+      console.log("Refreshing token...");
+
       const response = await axiosInstance.post("/accounts/token/refresh/");
       console.log(response, "response");
       setAccessToken(response.data.access_token);
