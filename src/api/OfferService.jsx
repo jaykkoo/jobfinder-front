@@ -3,7 +3,7 @@ import axiosInstance from './AxiosConfig';
 import qs from 'qs';
 
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = '"http://http://35.180.198.48';
 
 export const createOffer = async (offerData, accessToken) => {
     try {
