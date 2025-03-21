@@ -7,7 +7,6 @@ const Account = () => {
     const { accessToken } = useAuth();
 
     useEffect(() => {
-        console.log(accessToken);
         axiosInstance.get('/accounts/user/', {
             headers: {
                 Authorization: `Bearer ${accessToken}`,
