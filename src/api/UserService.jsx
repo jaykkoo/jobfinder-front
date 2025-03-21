@@ -1,7 +1,4 @@
-import axios from 'axios';
 import axiosInstance from './AxiosConfig';
-
-const BASE_URL = 'http://35.180.198.48'; 
 
 export const loginUser = async (userData) => {
     try {
@@ -17,8 +14,8 @@ export const loginUser = async (userData) => {
 
 export const createUser = async (userData) => {
     try {
-        const response = await axiosInstance.post(`/accounts/register/`, userData);
         alert(userData, "response");
+        const response = await axiosInstance.post(`/accounts/register/`, userData);
         return response.data;
     } catch (error) {
         console.error('Error creating user:', error);

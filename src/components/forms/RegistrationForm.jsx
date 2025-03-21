@@ -38,6 +38,7 @@ const RegistrationForm = ({openModalLoginAgain}) => {
         };
         // Call the createUser function
         try {
+            alert(userData, "response");
             await createUser(userData);
             window.location.reload();
         } catch (error) {
