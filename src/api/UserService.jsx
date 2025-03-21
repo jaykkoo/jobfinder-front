@@ -1,11 +1,11 @@
 import axios from 'axios';
 import axiosInstance from './AxiosConfig';
 
-const BASE_URL = 'http://35.180.198.48';
+const BASE_URL = 'http://35.180.198.48'; 
 
 export const loginUser = async (userData) => {
     try {
-        const response = await axiosInstance.post(`${BASE_URL}/accounts/login/`, userData, {
+        const response = await axiosInstance.post(`accounts/login/`, userData, {
             withCredentials: true
         });
         return response.data;
@@ -17,7 +17,7 @@ export const loginUser = async (userData) => {
 
 export const createUser = async (userData) => {
     try {
-        const response = await axiosInstance.post(`${BASE_URL}/accounts/register/`, userData);
+        const response = await axiosInstance.post(`/accounts/register/`, userData);
         return response.data;
     } catch (error) {
         console.error('Error creating user:', error);
@@ -26,13 +26,13 @@ export const createUser = async (userData) => {
 };
 
 export const deleteUser = async (userId) => {
-    const response = await axios.delete(`${BASE_URL}/users/${userId}`);
+    const response = await axiosInstance.delete(`/users/${userId}`);
     return response.data;
 };
 
 export const logoutUser = async (logout) => {
     try {
-        const response = await axiosInstance.post(`${BASE_URL}/accounts/logout/`);
+        const response = await axiosInstance.post(`/accounts/logout/`);
         logout();
         console.log(response.data), "data";
         return response.data;

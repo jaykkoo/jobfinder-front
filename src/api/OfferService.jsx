@@ -2,9 +2,6 @@ import axios from 'axios';
 import axiosInstance from './AxiosConfig';
 import qs from 'qs';
 
-
-const BASE_URL = 'http://35.180.198.48';
-
 export const createOffer = async (offerData, accessToken) => {
     try {
         const response = await axiosInstance.post(`/offers/create/`, offerData, {
@@ -51,7 +48,7 @@ export const deleteOffer = async (offerId, accessToken) => {
 
 export const getAllContractTypes = async () => {
     try {
-        const response = await axios.get(`${BASE_URL}/offers/get-all-contract-type/`);
+        const response = await axiosInstance.get(`/offers/get-all-contract-type/`);
         return response.data;
     } catch (error) {
         console.error('Error getting contract types:', error);
