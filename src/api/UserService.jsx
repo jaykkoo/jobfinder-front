@@ -18,6 +18,7 @@ export const loginUser = async (userData) => {
 export const createUser = async (userData) => {
     try {
         const response = await axiosInstance.post(`/accounts/register/`, userData);
+        console.log(UserData, "response");
         return response.data;
     } catch (error) {
         console.error('Error creating user:', error);
