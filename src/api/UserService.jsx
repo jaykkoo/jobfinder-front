@@ -14,7 +14,6 @@ export const loginUser = async (userData) => {
 
 export const createUser = async (userData) => {
     try {
-        alert(userData, "response");
         const response = await axiosInstance.post(`/accounts/register/`, userData);
         return response.data;
     } catch (error) {
