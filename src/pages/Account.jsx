@@ -8,13 +8,12 @@ const Account = () => {
 
     useEffect(() => {
         axiosInstance.get('/accounts/user/', {
-            headers: {
-                Authorization: `Bearer ${accessToken}`,
-            },
+            // headers: {
+            //     Authorization: `Bearer ${accessToken}`,
+            // },
         })
         .then((response) => {
             setUserInfo(response.data);
-            console.log(response.data, "data");
         })
         .catch((error) => {
             console.error('Error fetching account information:', error);
