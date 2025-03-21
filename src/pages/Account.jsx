@@ -8,9 +8,9 @@ const Account = () => {
 
     useEffect(() => {
         axiosInstance.get('/accounts/user/', {
-            // headers: {
-            //     Authorization: `Bearer ${accessToken}`,
-            // },
+            headers: {
+                Authorization: `Bearer ${accessToken}`,
+            },
         })
         .then((response) => {
             setUserInfo(response.data);
