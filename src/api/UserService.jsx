@@ -18,7 +18,7 @@ export const loginUser = async (userData) => {
 export const createUser = async (userData) => {
     try {
         const response = await axiosInstance.post(`/accounts/register/`, userData);
-        console.log(userData, "response");
+        alert(userData, "response");
         return response.data;
     } catch (error) {
         console.error('Error creating user:', error);
@@ -35,7 +35,6 @@ export const logoutUser = async (logout) => {
     try {
         const response = await axiosInstance.post(`/accounts/logout/`);
         logout();
-        console.log(response.data), "data";
         return response.data;
     } catch (error) {
         console.error('Error logging out:', error);
